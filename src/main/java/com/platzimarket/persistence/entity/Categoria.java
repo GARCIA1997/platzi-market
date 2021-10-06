@@ -16,8 +16,15 @@ public class Categoria {
     private Boolean estado;
     //Declaramos la relacion uno a muchos de categoria
     @OneToMany(mappedBy = "categoria")
-    private List<Producto> producto;
+    private List<Producto> productos;
 
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
 
     //Declaramos G AND S
     public Integer getIdCategoria() {

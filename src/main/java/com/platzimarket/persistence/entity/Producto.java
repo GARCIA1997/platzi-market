@@ -21,6 +21,15 @@ public class Producto {
     @Column (name = "cantidad_stock")
     private Integer cantidadStock;
     private Boolean estado;
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
     //Relacion de llave foranea de la tabla Producto con categoria
     @ManyToOne
     @JoinColumn (name = "id_categoria", insertable = false, updatable = false)
