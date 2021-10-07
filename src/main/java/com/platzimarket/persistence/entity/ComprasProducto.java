@@ -17,12 +17,21 @@ public class ComprasProducto {
     //Relaciones a llaves Foraneas Este es un detalle por eso tiene dos relaciones
     //Relacion de Compra a ComprasProducto
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn (name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
     //Relacion de Producto a ComprasPoroducto
     @ManyToOne
     @JoinColumn (name = "id_producto", insertable = false, updatable = false)
     private Producto producto;
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
 
     //Generacion de Getters and Setters
     public ComprasProductoPK getId() {
@@ -31,6 +40,14 @@ public class ComprasProducto {
 
     public void setId(ComprasProductoPK id) {
         this.id = id;
+    }
+
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
     }
 
     public Integer getCantidad() {
